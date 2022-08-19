@@ -2,11 +2,15 @@ package com.fmartinier.statsforgames
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentPagerAdapter
 import androidx.viewpager2.widget.ViewPager2
 import com.fmartinier.statsforgames.databinding.ActivityMainBinding
+import com.fmartinier.statsforgames.model.enums.EMainActivityType
 import com.fmartinier.statsforgames.ui.main.SectionsPagerAdapter
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -27,12 +31,12 @@ class MainActivity : AppCompatActivity() {
         }.attach()
     }
 
-    fun getTabIcon(position: Int) = when(position) {
-        0 -> R.drawable.ic_stats
-        1 -> R.drawable.ic_save
-        2 -> R.drawable.ic_games
-        3 -> R.drawable.ic_players
-        4 -> R.drawable.ic_history
+    private fun getTabIcon(position: Int) = when(position) {
+        EMainActivityType.STATS.index -> R.drawable.ic_stats
+        EMainActivityType.SAVE_SCORE.index -> R.drawable.ic_save
+        EMainActivityType.GAMES.index -> R.drawable.ic_games
+        EMainActivityType.PLAYERS.index -> R.drawable.ic_players
+        EMainActivityType.HISTORY.index -> R.drawable.ic_history
         else -> 0
     }
 }

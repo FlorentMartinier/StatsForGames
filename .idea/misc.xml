@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="../../../../layout/custom_preview.xml" value="0.19784172661870503" />
         <entry key="..\:/Users/flore/AndroidStudioProjects/StatsForGames/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1965" />
         <entry key="..\:/Users/flore/AndroidStudioProjects/StatsForGames/app/src/main/res/drawable/history.xml" value="0.1965" />
         <entry key="..\:/Users/flore/AndroidStudioProjects/StatsForGames/app/src/main/res/drawable/ic_games.xml" value="0.1965" />
@@ -15,6 +16,13 @@
         <entry key="..\:/Users/flore/AndroidStudioProjects/StatsForGames/app/src/main/res/drawable/stats.xml" value="0.1965" />
         <entry key="..\:/Users/flore/AndroidStudioProjects/StatsForGames/app/src/main/res/layout/activity_main.xml" value="0.18854166666666666" />
         <entry key="..\:/Users/flore/AndroidStudioProjects/StatsForGames/app/src/main/res/layout/fragment_main.xml" value="0.18854166666666666" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.17916666666666667" />
+        <entry key="app/src/main/res/layout/fragment_main.xml" value="0.17916666666666667" />
+        <entry key="app/src/main/res/layout/games.xml" value="0.17916666666666667" />
+        <entry key="app/src/main/res/layout/history.xml" value="0.17916666666666667" />
+        <entry key="app/src/main/res/layout/players.xml" value="0.17916666666666667" />
+        <entry key="app/src/main/res/layout/save_game.xml" value="0.17916666666666667" />
+        <entry key="app/src/main/res/layout/stats.xml" value="0.17916666666666667" />
       </map>
     </option>
   </component>
