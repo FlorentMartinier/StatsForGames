@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Stats For Games</string>
+    <string name="title_stats">Statistics</string>
+    <string name="title_players">Players</string>
+    <string name="title_history">History</string>
+    <string name="title_games">Games</string>
+    <string name="title_save_score">Save score</string>
+</resources>

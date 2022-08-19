@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Stats For Games</string>
+    <string name="title_stats">Statistiques</string>
+    <string name="title_players">Joueurs</string>
+    <string name="title_history">Historique</string>
+    <string name="title_games">Jeux</string>
+    <string name="title_save_score">Enregistrer un score</string>
+</resources>
