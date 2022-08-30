@@ -1,4 +1,4 @@
-package com.fmartinier.statsforgames.viewControllers
+package com.fmartinier.statsforgames.ui.main.stats
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.fmartinier.statsforgames.databinding.StatsBinding
 
-class StatsView : Fragment() {
+class StatsViewController : Fragment() {
 
     private lateinit var binding: StatsBinding
 

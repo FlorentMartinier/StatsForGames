@@ -2,12 +2,10 @@ package com.fmartinier.statsforgames
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.FragmentPagerAdapter
 import androidx.viewpager2.widget.ViewPager2
 import com.fmartinier.statsforgames.databinding.ActivityMainBinding
 import com.fmartinier.statsforgames.model.enums.EMainActivityType
-import com.fmartinier.statsforgames.ui.main.SectionsPagerAdapter
+import com.fmartinier.statsforgames.ui.main.MainViewPagerAdapter
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 
@@ -22,7 +20,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val sectionsPagerAdapter = SectionsPagerAdapter(this)
+        val sectionsPagerAdapter = MainViewPagerAdapter(this)
         val viewPager2: ViewPager2 = binding.viewPager
         viewPager2.adapter = sectionsPagerAdapter
         val tabLayout: TabLayout = binding.tabs
