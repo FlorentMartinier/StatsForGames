@@ -5,17 +5,18 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Adapter
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
-import androidx.core.view.forEach
-import androidx.core.view.iterator
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.fmartinier.statsforgames.databinding.SaveScoreBinding
+import com.fmartinier.statsforgames.model.bdd.PocBddPopulator
 import com.fmartinier.statsforgames.model.entities.Game
+import com.fmartinier.statsforgames.model.entities.Player
 import com.fmartinier.statsforgames.model.entities.gameList
-import com.fmartinier.statsforgames.model.enums.EWinnerRule
+import com.fmartinier.statsforgames.model.entities.playerList
+import com.fmartinier.statsforgames.ui.main.players.PlayersCardAdapter
 
 
 class SaveScoreViewController : Fragment() {
@@ -23,26 +24,48 @@ class SaveScoreViewController : Fragment() {
     private lateinit var binding: SaveScoreBinding
     private lateinit var selectedGame: Game
 
+    private var selectedPlayers: MutableList<Player> = mutableListOf()
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+        PocBddPopulator.populateGames()
+        PocBddPopulator.populatePlayers()
+        selectedPlayers.add(playerList[0])
         binding = SaveScoreBinding.inflate(inflater, container, false)
-        val gamesSpinner = binding.gamesSpinner
 
-        println("requireContext() = ${requireContext()}")
+        initializeGameSpinner()
+
+        // Initialisation de la liste des joueurs
+        binding.playerRecyclerView.apply {
+            layoutManager = LinearLayoutManager(context)
+            adapter = PlayerScoreCardAdapter(selectedPlayers)
+        }
+
+        // Initialisation du bouton d'action (ajout de joueur + sauvegarde d'un score)
+        binding.floatingActionButton.setOnClickListener {
+            Toast.makeText(context, "ajout d'un joueur", Toast.LENGTH_LONG).show()
+            selectedPlayers.add(playerList[1])
+            binding.playerRecyclerView.adapter?.notifyItemChanged(playerList.size)
+        }
+        return binding.root
+    }
+
+    /**
+     * Initialisation du game spinner : liste déroulante avec tous les jeux possibles
+     */
+    private fun initializeGameSpinner() {
+        val gamesSpinner = binding.gamesSpinner
         val adapter = ArrayAdapter(
             requireContext(),
             R.layout.simple_spinner_item,
             gameList
         )
-
         adapter.setDropDownViewResource(R.layout.simple_spinner_dropdown_item)
-
-        // TODO : Je ne comprends pas pourquoi sans le add il ne prends pas en compte la liste d'items.
-        adapter.add(Game("test", EWinnerRule.OTHER))
         gamesSpinner.adapter = adapter
+
         gamesSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(p0: AdapterView<*>?, view: View?, position: Int, id: Long) {
                 selectedGame = adapter.getItem(position) as Game
@@ -50,14 +73,9 @@ class SaveScoreViewController : Fragment() {
             }
 
             override fun onNothingSelected(p0: AdapterView<*>?) {
-                TODO("Not yet implemented")
             }
 
         }
-
-        adapter.notifyDataSetChanged()
-
-        return binding.root
     }
 
 }

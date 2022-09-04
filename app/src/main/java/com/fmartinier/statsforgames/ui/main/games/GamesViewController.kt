@@ -8,6 +8,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.fmartinier.statsforgames.databinding.GamesBinding
+import com.fmartinier.statsforgames.model.bdd.PocBddPopulator
 import com.fmartinier.statsforgames.model.entities.Game
 import com.fmartinier.statsforgames.model.entities.Player
 import com.fmartinier.statsforgames.model.entities.gameList
@@ -24,11 +25,15 @@ class GamesViewController : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        populateGames()
+        PocBddPopulator.populateGames()
         binding = GamesBinding.inflate(inflater, container, false)
+
+        // Création d'un jeu
         binding.floatingActionButton.setOnClickListener{
             Toast.makeText(context, "Création de jeu", Toast.LENGTH_LONG).show()
         }
+
+        // Initialisation de la liste des jeux
         binding.gamesRecyclerView.apply {
             layoutManager = LinearLayoutManager(context)
             adapter = GamesCardAdapter(gameList)
@@ -36,13 +41,4 @@ class GamesViewController : Fragment() {
 
         return binding.root
     }
-
-    private fun populateGames() {
-        gameList.add(Game("Seven wonder", EWinnerRule.MAX_POINT))
-        gameList.add(Game("Smash up", EWinnerRule.MAX_POINT))
-        gameList.add(Game("Magic", EWinnerRule.MORE_THAN_0_POINTS))
-        gameList.add(Game("Splendor", EWinnerRule.MAX_POINT))
-        gameList.add(Game("River Dragon", EWinnerRule.OTHER))
-    }
-
 }
