@@ -3,7 +3,6 @@ package com.fmartinier.statsforgames.ui.main.save_score
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.fmartinier.statsforgames.databinding.PlayerCardViewBinding
 import com.fmartinier.statsforgames.databinding.PlayerScoreCardViewBinding
 import com.fmartinier.statsforgames.model.entities.Player
 

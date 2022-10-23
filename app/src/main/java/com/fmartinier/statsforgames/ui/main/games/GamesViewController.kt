@@ -9,12 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.fmartinier.statsforgames.databinding.GamesBinding
 import com.fmartinier.statsforgames.model.bdd.PocBddPopulator
-import com.fmartinier.statsforgames.model.entities.Game
-import com.fmartinier.statsforgames.model.entities.Player
 import com.fmartinier.statsforgames.model.entities.gameList
-import com.fmartinier.statsforgames.model.entities.playerList
-import com.fmartinier.statsforgames.model.enums.EWinnerRule
-import com.fmartinier.statsforgames.ui.main.players.PlayersCardAdapter
 
 class GamesViewController : Fragment() {
 

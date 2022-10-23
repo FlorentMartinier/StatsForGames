@@ -3,10 +3,8 @@ package com.fmartinier.statsforgames.ui.main.save_score
 import android.content.Context
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
-import com.fmartinier.statsforgames.databinding.PlayerCardViewBinding
 import com.fmartinier.statsforgames.databinding.PlayerScoreCardViewBinding
 import com.fmartinier.statsforgames.model.entities.Player
-import com.fmartinier.statsforgames.model.entities.scoreList
 
 class PlayerScoreCardViewHolder(
     private val playerCardViewBinding: PlayerScoreCardViewBinding,
