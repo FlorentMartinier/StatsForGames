@@ -20,7 +20,7 @@ class GamesViewController : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        PocBddPopulator.populateGames()
+        PocBddPopulator.populateAll()
         binding = GamesBinding.inflate(inflater, container, false)
 
         // Création d'un jeu

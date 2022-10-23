@@ -1,14 +1,11 @@
 package com.fmartinier.statsforgames.model.entities
 
-import java.util.*
-
 var scoreList = mutableListOf<Score>()
 
 class Score(
-    val game: Game,
+    // val party: Party, TODO : A voir si c'est possible de valoriser les instances comme avec hibernate
     val player: Player,
     val score: Int,
     val winner: Boolean,
-    val date: Date,
     val id: Int? = scoreList.size
 )

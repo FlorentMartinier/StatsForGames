@@ -6,4 +6,8 @@ class Player(
     val firstName: String,
     val name: String,
     val id: Int? = playerList.size
-)
+) {
+    override fun toString(): String {
+        return "$firstName $name"
+    }
+}

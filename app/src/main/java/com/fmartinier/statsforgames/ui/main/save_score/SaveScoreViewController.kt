@@ -30,8 +30,7 @@ class SaveScoreViewController : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        PocBddPopulator.populateGames()
-        PocBddPopulator.populatePlayers()
+        PocBddPopulator.populateAll()
         selectedPlayers.add(playerList[0])
         binding = SaveScoreBinding.inflate(inflater, container, false)
 

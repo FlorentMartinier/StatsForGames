@@ -20,7 +20,7 @@ class PlayersViewController : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        PocBddPopulator.populatePlayers()
+        PocBddPopulator.populateAll()
         binding = PlayersBinding.inflate(inflater, container, false)
         binding.floatingActionButton.setOnClickListener{
             Toast.makeText(context, "Création de joueur", Toast.LENGTH_LONG).show()
