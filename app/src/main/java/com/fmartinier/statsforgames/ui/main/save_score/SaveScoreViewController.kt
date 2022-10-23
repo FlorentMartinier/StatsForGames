@@ -12,10 +12,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.fmartinier.statsforgames.databinding.SaveScoreBinding
 import com.fmartinier.statsforgames.model.bdd.PocBddPopulator
-import com.fmartinier.statsforgames.model.entities.Game
-import com.fmartinier.statsforgames.model.entities.Player
-import com.fmartinier.statsforgames.model.entities.gameList
-import com.fmartinier.statsforgames.model.entities.playerList
+import com.fmartinier.statsforgames.model.entities.*
 import com.fmartinier.statsforgames.ui.main.players.PlayersCardAdapter
 
 
@@ -45,10 +42,13 @@ class SaveScoreViewController : Fragment() {
         }
 
         // Initialisation du bouton d'action (ajout de joueur + sauvegarde d'un score)
-        binding.floatingActionButton.setOnClickListener {
+        binding.addPlayerButton.setOnClickListener {
             Toast.makeText(context, "ajout d'un joueur", Toast.LENGTH_LONG).show()
             selectedPlayers.add(playerList[1])
             binding.playerRecyclerView.adapter?.notifyItemChanged(playerList.size)
+        }
+        binding.validateScoreButton.setOnClickListener {
+            Toast.makeText(context, "Validation du score", Toast.LENGTH_LONG).show()
         }
         return binding.root
     }
@@ -77,5 +77,4 @@ class SaveScoreViewController : Fragment() {
 
         }
     }
-
 }

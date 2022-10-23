@@ -14,7 +14,7 @@ class PlayersCardViewHolder(
         playerCardViewBinding.textView.text = getPlayerName(player)
 
         playerCardViewBinding.editButton.setOnClickListener {
-            Toast.makeText(context, "Création du joueur ${getPlayerName(player)}", Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, "Edition du joueur ${getPlayerName(player)}", Toast.LENGTH_SHORT).show()
         }
 
         playerCardViewBinding.deleteButton.setOnClickListener {

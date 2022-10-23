@@ -6,4 +6,6 @@
     <string name="title_games">Jeux</string>
     <string name="title_save_score">Enregistrer un score</string>
     <string name="add_player">Ajouter un joueur</string>
+    <string name="winner">Gagnant ?</string>
+    <string name="validate_score">Validater le score</string>
 </resources>

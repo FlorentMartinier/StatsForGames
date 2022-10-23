@@ -14,7 +14,7 @@ class GamesCardViewHolder(
         gameCardViewBinding.textView.text = game.name
 
         gameCardViewBinding.editButton.setOnClickListener {
-            Toast.makeText(context, "Création du jeu ${game.name}", Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, "Edition du jeu ${game.name}", Toast.LENGTH_SHORT).show()
         }
 
         gameCardViewBinding.deleteButton.setOnClickListener {
